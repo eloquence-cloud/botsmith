@@ -17,31 +17,6 @@ supports branching such as for subtasks, user editing of a prior message, and te
 - **Completion**: Records the point in a `Chat` where the LLM was invoked for a completion. Records all parameters passed to the LLM. Serves as a traceable link from this content to messages generated
 during the completion process.
 
-### The `Chat` Object
-
-- `chatId`: A unique identifier for the chat.
-- `headMessage`: The root message of the main conversation thread.
-- `metadata`: A JSON object for storing additional, arbitrary data related to the chat.
-- `defaultModelProvider`: an enum, presently always `OpenAi`
-- `defaultModel`: name of the LLM
-
-### The `Message` Object
-
-- `messageId`: A unique identifier for the message.
-- `chat`: The parent chat object.
-- `branchBaseMessage`: The message that initiated this branch within the chat.
-- `originatingCompletion`: The `Completion` that led to this message's creation, if applicable.
-- `metadata`: A JSON object for storing additional, arbitrary data related to the message.
-
-### The `Completion` Object
-
-- `completionId`: A unique identifier for the completion.
-- `chat`: A reference to the parent chat object.
-- `contextMessages`: An array of `Message` objects that are not part of the chat, but are added to the chat for submission to GPT.
-- `modelProvider`: an enum, presently always `OpenAi`
-- `model`: name of the LLM
-- `otherParameters`: Additional parameters passed to the model.
-
 ## Non-Persistent Types
 
 - **GptFunction**: Represents a callable function within the GPT context, allowing for dynamic interactions and operations within a chat session.
