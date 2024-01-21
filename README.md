@@ -24,7 +24,7 @@ during the completion process.
 ## BotSmith Responsibilities
 
 BotSmith is responsible for:
-- Managing persistent entities (Chat, Message, Completion).
+- Managing persistent entities (Chat, Message, Completion, etc.).
 - Overseeing the chat flow, including:
   - Invoking OpenAI's API.
   - Streaming completion results to the client.
@@ -34,16 +34,18 @@ BotSmith is responsible for:
 
 ## Getting Started
 
-To begin using BotSmith, first install the package and configure your OpenAI API key. You can then create `Chat` sessions and integrate AI-powered responses into your applications.
+To begin using BotSmith, first install the package.
 
 ```
 npm install botsmith
 ```
 
-Here's a simple example of BotSmith use. It assumes you have defined the following environment variables:
+You will need an OpenAI account and a Supabase instance. Define the following environment variables:
 - `OPENAI_API_KEY`
 - `SUPABASE_DB_URL`
 - `SUPABASE_KEY`
+
+Here's a simple example of BotSmith use. It assumes you have defined 
 
 ```typescript
 import { BotSmithClient, GptFunction, FunctionContext } from 'botsmith';
